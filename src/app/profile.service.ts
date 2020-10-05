@@ -15,4 +15,9 @@ export class ProfileService {
     console.log('service is now ready');
   }
 
+  getUser() {
+    return this.http.get("https://api.github.com/users/" + this.username + "?client_id=" + this.clientId + "&client_secret=" + this.clientSecret);
+  }
+
+
 }
