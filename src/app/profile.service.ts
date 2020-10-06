@@ -8,13 +8,12 @@ import { environment } from '../environments/environment';
 export class ProfileService {
 
   user: string;
-  repoName: string;
+  reponame: string;
   clientId: string = "b837f0ae5b2da830be07";
   clientSecret: string = "88414eeecfc89f3e2c1149c9fabe61331678f9db";
   apikey:string='bb74c565705f92dc6e86ddbf2be0c283546fa6b1';
   
   constructor(private http: HttpClient) { 
-    console.log('service is now ready');
   }
 
   getUser() {

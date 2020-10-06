@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  access_token: 'bb74c565705f92dc6e86ddbf2be0c283546fa6b1'
+  apiurl :'https://api.github.com/users/kev127?access_token= bb74c565705f92dc6e86ddbf2be0c283546fa6b1'
 };
 
 /*
