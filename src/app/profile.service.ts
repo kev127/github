@@ -19,21 +19,46 @@ export class ProfileService {
   }
 
   getUser() {
-    return this.http.get("https://api.github.com/users/" + this.user + "?client_id=" + this.clientId + "&client_secret=" + this.clientSecret);
+    interface Response {
+      login: string,
+      avatar_url: string,
+      url: string,
+      name: string,
+      email: string,
+      followers: number,
+      following: number,
+    }
+    return new Promise((resolve, reject) => {
+      this.http.get<Response>('https://api.github.com/users/' + '?access_token=' + environment.apikey).toPromise()
+        .then((result) => {
+          
+          this.user = result
+          resolve();
+        }, (error) => {
+          console.log(error);
+          reject();
+        })
+    })
   }
-  getUserRepos() {
-    return this.http.get('https://api.github.com/users/' + this.user + '/repos'+ "?client_id=" + this.clientId + "&client_secret=" + this.clientSecret);
-  }
-  searchrepos() {
-    return this.http.get('https://api.github.com/search/repositories?q=' + this.repoName, ({
-      headers: new HttpHeaders(access_token=' + environment.apiKey')
-    }))
-  }
-  UpdateUser(user:string) {
-    this.user = user;
-  }
-  UpdateRepo(repo:string) {
-    this.repoName = repo;
-  }
+  searchRepo() {
+    interface Response {
+      name: string,
+      description: string,
+      repos: string,
+      language: string,
+      html_url: string,
+      created_at: string,
+    }
+    return new Promise((resolve, reject) => {
+      this.http.get<Response>( 'https://api.github.com/users/' + '/repos?access_token=' + environment.apikey).toPromise()
+      .then((result) => {
+          this.repo = result
+          resolve();
+        }, (error) => {
+          console.log(error);
+          reject();
+        })
+    })
 
+  }
 }
