@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfileService } from '../profile.service';
+import { Repo } from '../repo'
+import { User } from '../user';
 
 @Component({
   selector: 'app-repo',
@@ -6,10 +9,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./repo.component.css']
 })
 export class RepoComponent implements OnInit {
+  repo:Repo;
+  user:User;
 
-  constructor() { }
+  constructor(private profileService: ProfileService) { }
 
-  ngOnInit(): void {
+  searchRepo () {
+    this.profileService.searchRepo().then((success)=>{
+      this.user=this.profileService.user;
+    });
+
+    this.profileService.searchRepo().then((success)=>{
+      this.repo=this.profileService.repo;
+    });
+
   }
 
+  ngOnInit(): void {
+
+  }
 }
