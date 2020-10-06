@@ -2,3 +2,20 @@
     <input class="form-control mr-sm-2" type="text" placeholder="Search repo" aria-label="Search">
     <button mdbBtn size="sm" gradient="aqua" rounded="true" class="my-0 waves-light" mdbWavesEffect type="submit">Search</button>
 </form>
+<div class="row">
+    <div class="col-md-4" *ngFor="let repo of repo">
+        <div class="card">
+            <div class="card-head"><br>
+                <h4 class="text-center"> <strong>{{ repo.name }}</strong></h4>
+            </div>
+            <hr>
+            <div class="card-body">
+                <p><strong>Description:</strong> {{ repo.description }}</p>
+                <p><strong>Language:</strong> {{ repo.language }}</p>
+            </div>
+            <div class="card-footer text-center">
+                <a href="{{ repo.html_url }}" class="btn btn-info" target="_blank">View Project</a>
+            </div>
+        </div><br>
+    </div>
+</div>
