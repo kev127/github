@@ -11,8 +11,6 @@ export class ProfileService {
 
   user: User;
   repo: Repo;
-  clientId: string = "b837f0ae5b2da830be07";
-  clientSecret: string = "88414eeecfc89f3e2c1149c9fabe61331678f9db";
   apikey:string='bb74c565705f92dc6e86ddbf2be0c283546fa6b1';
   
   constructor(private http: HttpClient) { 
