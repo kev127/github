@@ -1,10 +1,19 @@
 # Github
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.4.\
+
+# Project Description
+A website where users may enter a GitHub username into a form, submit it, and see names and descriptions of that person's public repositories. A person can also look for repositories
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Technologies Used 
+HTM
+CSS
+Bootsrap
+Angular JS
 
 ## Code scaffolding
 
@@ -21,6 +30,10 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Contact information
+The project has been worked by Kelvin Keya
+email: kelvinkeya125@gmail.com
 
 ## Further help
 
