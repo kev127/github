@@ -27,7 +27,7 @@ export class ProfileService {
       following: number,
     }
     return new Promise((resolve, reject) => {
-      this.http.get<Response>('https://api.github.com/users/' + '?access_token=' + environment.apikey).toPromise()
+      this.http.get<Response>('https://api.github.com/user' + '?access_token=' + environment.apikey).toPromise()
         .then((result) => {
           
           this.user = result
@@ -48,7 +48,7 @@ export class ProfileService {
       created_at: string,
     }
     return new Promise((resolve, reject) => {
-      this.http.get<Response>( 'https://api.github.com/users/' + '/repos?access_token=' + environment.apikey).toPromise()
+      this.http.get<Response>( 'https://api.github.com/user' + '/repos?access_token=' + environment.apikey).toPromise()
       .then((result) => {
           this.repo = result
           resolve();
